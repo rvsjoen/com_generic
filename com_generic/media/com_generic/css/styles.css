@@ -1,0 +1,420 @@
+@charset "UTF-8";
+
+/**
+ * @version		1.0.0 2011.06.05
+ * @package		Joomla.Site
+ * @subpackage	com_generic
+ * @copyright	Copyright (C) 2010-2011 FakeAuthor. All rights reserved.
+ * @license		GNU General Public License version 2 or later
+ */
+
+.clr{
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+
+/* -- TOOLBAR STYLES ----------------------------- */
+/* Toolbar container box */
+div#toolbar-box{
+	background: none repeat scroll 0 0 #E6E6E6;
+	border: 1px solid #BDBDBD;
+	border-radius: 10px 10px 10px 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+/* Toolbar title */
+div.pagetitle{
+	height: 55px;
+	padding-left: 70px;
+	background-repeat: no-repeat;
+	background-position: 10px 4px;
+	display: table-cell;
+	vertical-align: middle;
+	/*border: 1px solid #BDBDBD;*/
+	position:relative;
+	top:3px;
+}
+
+div.pagetitle h2{
+	line-height: 24px !important;
+	font-size: 1.7em !important;
+	font-weight: bold !important;
+	color: #146295 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div.pagetitle span{
+	color: #666;
+}
+
+/* Buttons container */
+div.toolbar-list{
+	float: right;
+	text-align: right;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* Buttons list */
+div.toolbar-list ul{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div.toolbar-list ul li{
+	display: inline-block;
+	padding: 1px 1px 3px 4px;
+	text-align: center;
+	color: #666;
+	list-style: none;
+	/*float: left;*/
+	margin: 1px !important;
+	
+}
+
+/* Buttons */
+div.toolbar-list ul li a{
+	display: block;
+	white-space: nowrap;
+	padding: 1px 5px;
+	cursor: pointer;
+	text-decoration: none;
+	background: none repeat scroll 0 0 #FFFFFF !important;
+	border: 1px solid #BDBDBD;
+	border-radius: 7px 7px 7px 7px;
+	color: #0B55C4 !important;
+	box-shadow: inset 0px 0px 4px 0px #A4A4A4
+}
+
+div.toolbar-list ul li a:hover,
+div.toolbar-list ul li a:focus{
+	border: 1px solid #2272ab;
+	box-shadow: inset 0px 0px 4px 0px #2272ab
+}
+
+div.toolbar-list ul li a:active{
+	border: 1px solid #0C1A3E;
+	color: #FFFFFF !important;
+	background: none repeat scroll 0 0 #0C1A3E !important;
+}
+
+div.toolbar-list ul li span{
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+}
+
+/* Spacers */
+div.toolbar-list ul li.spacer{
+	display: inline-block;
+	width: 10px;
+}
+
+/* Dividers */
+div.toolbar-list ul li.divider{
+	display: inline-block;
+	border-left: 1px solid #B0B0B0;
+	border-right: 1px solid #FAFAFA;
+	margin: 0px 5px !important;
+	margin-bottom: -20px !important;
+	height: 63px;
+	width: 0px;
+	position:relative;
+	top:-9px;
+}
+
+/* -- GENERIC BOX STYLE ----------------------------- */
+div.element-box{
+	background: none repeat scroll 0 0 #E6E6E6;
+	border: 1px solid #BDBDBD;
+	border-radius: 10px 10px 10px 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+/* -- SUBMENU STYLES ----------------------------- */
+/* Submenu container box*/
+div#submenu-box{
+	background: none repeat scroll 0 0 #E6E6E6;
+	border: 1px solid #BDBDBD;
+	border-radius: 10px 10px 10px 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+/* Main toolbars */
+div#submenu-box ul{
+	float: left;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div#submenu-box ul li{
+	display: inline-block;
+	list-style: none;
+}
+
+div#submenu-box ul li a{
+	display: block;
+	white-space: nowrap;
+	padding: 2px 10px;
+	margin: 0px 4px;
+	cursor: pointer;
+	text-decoration: none;
+	background: none repeat scroll 0 0 transparent !important;
+	border: 1px solid #BDBDBD;
+	border-radius: 7px 7px 7px 7px;
+	color: #585858 !important;
+	/*box-shadow: inset 0px 0px 4px 0px #A4A4A4*/
+}
+
+div#submenu-box ul li a.active{
+	display: block;
+	white-space: nowrap;	
+	cursor: pointer;
+	text-decoration: none;
+	background: none repeat scroll 0 0 #FFFFFF !important;
+	border: 1px solid #BDBDBD;
+	border-radius: 7px 7px 7px 7px;
+	color: #000000 !important;
+}
+
+div#submenu-box ul li a:hover,
+div#submenu-box ul li a:focus{
+	border: 1px solid #2272ab;
+	box-shadow: inset 0px 0px 4px 0px #2272ab;
+	background: none repeat scroll 0 0 #FFFFFF !important;
+	color: #000000 !important;
+}
+
+div#submenu-box ul li a:active{
+	border: 1px solid #0C1A3E;
+	color: #FFFFFF !important;
+	background: none repeat scroll 0 0 #0C1A3E !important;
+}
+
+/* -- GRID STYLES ----------------------------- */
+/* Submenu container box*/
+div.grid-box{
+	background: none repeat scroll 0 0 #E6E6E6;
+	border: 1px solid #BDBDBD;
+	border-radius: 10px 10px 10px 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+/* Separator */
+div.grid-box div.separator{
+	border-top: 1px solid #9A9A9A;
+}
+
+/* Table */
+div.grid-box table {
+	width:100%;
+}
+
+div.grid-box table a{
+	text-decoration: none;
+}
+
+div.grid-box table th {
+	background-color: #E6E6E6;
+}
+
+div.grid-box table tr.odd {
+	background:url(../images/grid/oddtrbg.gif)  repeat-x;
+}
+
+div.grid-box table tr.even {
+	background-color: #E6E6E6;
+}
+	
+div.grid-box table th {
+	padding:5px;
+	text-align: center;
+}
+
+div.grid-box table td {
+	padding:5px;
+	text-align: center;
+}
+
+div.grid-box table td.tal {
+	text-align: left;
+}
+
+div.grid-box table td.tar {
+	text-align: right;
+}
+
+div.grid-box table tr:hover {
+	background-color: #A9D0F5;
+	background-image: none; 
+}
+
+div.grid-box table td p.smallsub {
+	color: #666675;
+	font-size: 0.9em;
+	margin: 4px;
+	white-space: nowrap;
+}
+
+div.grid-box table td p.smallsub span {
+	color: #a0a0a0;	
+}
+
+div.grid-box table td.order {
+	white-space: nowrap;
+}
+
+div.grid-box table td.order span {
+	float: left;
+	width: 20px;
+	height: 13px;
+	text-align: center;
+	background-repeat: no-repeat;
+}
+
+div.grid-box table td.order input.text-area-order {
+	width: 30px;
+	text-align: center;
+}
+
+.jgrid span.state {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+}
+
+/* -- GRID ICONS ----------------------------- */
+.jgrid span.text                    {display:none;}
+.jgrid span.publish                 {background-image: url(../images/grid/tick.png);}
+.jgrid span.unpublish               {background-image: url(../images/grid/publish_x.png);}
+.jgrid span.checkedout              {background-image: url(../images/grid/checked_out.png);}
+.jgrid span.downarrow               {background-image: url(../images/grid/downarrow.png);}
+.jgrid span.downarrow_disabled      {background-image: url(../images/grid/downarrow0.png); background-position: 0 -12px;}
+.jgrid span.uparrow                 {background-image: url(../images/grid/uparrow.png);}
+.jgrid span.uparrow_disabled        {background-image: url(../images/grid/uparrow0.png); background-position: 0 -12px;}
+.jgrid span.published               {background-image: url(../images/grid/publish_g.png);}
+.jgrid span.expired                 {background-image: url(../images/grid/publish_r.png);}
+.jgrid span.pending                 {background-image: url(../images/grid/publish_y.png);}
+.jgrid span.archive                 {background-image: url(../images/menu/icon-16-archive.png);}
+.jgrid span.trash                   {background-image: url(../images/menu/icon-16-trash.png);}
+.jgrid span.default                 {background-image: url(../images/menu/icon-16-default.png);}
+.jgrid span.notdefault              {background-image: url(../images/menu/icon-16-notdefault.png);}
+
+/* -- TOOLBAR BUTTONS ICON STYLES ----------------------------- */
+.icon-32-send				{background-image: url(../images/toolbar/buttons/icon-32-send.png);}
+.icon-32-delete				{background-image: url(../images/toolbar/buttons/icon-32-delete.png);}
+.icon-32-help				{background-image: url(../images/toolbar/buttons/icon-32-help.png);}
+.icon-32-cancel				{background-image: url(../images/toolbar/buttons/icon-32-cancel.png);}
+.icon-32-checkin			{background-image: url(../images/toolbar/buttons/icon-32-checkin.png);}
+.icon-32-options			{background-image: url(../images/toolbar/buttons/icon-32-config.png);}
+.icon-32-apply				{background-image: url(../images/toolbar/buttons/icon-32-apply.png);}
+.icon-32-back				{background-image: url(../images/toolbar/buttons/icon-32-back.png);}
+.icon-32-export				{background-image: url(../images/toolbar/buttons/icon-32-export.png);}
+.icon-32-forward			{background-image: url(../images/toolbar/buttons/icon-32-forward.png);}
+.icon-32-save				{background-image: url(../images/toolbar/buttons/icon-32-save.png);}
+.icon-32-edit				{background-image: url(../images/toolbar/buttons/icon-32-edit.png);}
+.icon-32-copy				{background-image: url(../images/toolbar/buttons/icon-32-copy.png);}
+.icon-32-move				{background-image: url(../images/toolbar/buttons/icon-32-move.png);}
+.icon-32-new				{background-image: url(../images/toolbar/buttons/icon-32-new.png);}
+.icon-32-upload				{background-image: url(../images/toolbar/buttons/icon-32-upload.png);}
+.icon-32-assign				{background-image: url(../images/toolbar/buttons/icon-32-publish.png);}
+.icon-32-html				{background-image: url(../images/toolbar/buttons/icon-32-html.png);}
+.icon-32-css				{background-image: url(../images/toolbar/buttons/icon-32-css.png);}
+.icon-32-menus				{background-image: url(../images/toolbar/buttons/icon-32-menu.png);}
+.icon-32-publish			{background-image: url(../images/toolbar/buttons/icon-32-publish.png);}
+.icon-32-unblock			{background-image: url(../images/toolbar/buttons/icon-32-unblock.png);}
+.icon-32-unpublish			{background-image: url(../images/toolbar/buttons/icon-32-unpublish.png);}
+.icon-32-restore			{background-image: url(../images/toolbar/buttons/icon-32-revert.png);}
+.icon-32-trash				{background-image: url(../images/toolbar/buttons/icon-32-trash.png);}
+.icon-32-archive			{background-image: url(../images/toolbar/buttons/icon-32-archive.png);}
+.icon-32-unarchive			{background-image: url(../images/toolbar/buttons/icon-32-unarchive.png);}
+.icon-32-preview			{background-image: url(../images/toolbar/buttons/icon-32-preview.png);}
+.icon-32-default			{background-image: url(../images/toolbar/buttons/icon-32-default.png);}
+.icon-32-refresh			{background-image: url(../images/toolbar/buttons/icon-32-refresh.png);}
+.icon-32-save-new			{background-image: url(../images/toolbar/buttons/icon-32-save-new.png);}
+.icon-32-save-copy			{background-image: url(../images/toolbar/buttons/icon-32-save-copy.png);}
+.icon-32-error				{background-image: url(../images/toolbar/buttons/icon-32-error.png);}
+.icon-32-new-style			{background-image: url(../images/toolbar/buttons/icon-32-new-style.png);}
+.icon-32-delete-style		{background-image: url(../images/toolbar/buttons/icon-32-delete-style.png);}
+.icon-32-purge				{background-image: url(../images/toolbar/buttons/icon-32-purge.png);}
+.icon-32-remove				{background-image: url(../images/toolbar/buttons/icon-32-remove.png);}
+.icon-32-featured			{background-image: url(../images/toolbar/buttons/icon-32-featured.png);}
+.toolbar-inactive			{background-position: 0px 32px;}
+
+/* -- TOOLBAR TITLE ICON STYLES ----------------------------- */
+.icon-48-categories					{background-image: url(../images/toolbar/title/icon-48-category.png);}
+.icon-48-category-edit				{background-image: url(../images/toolbar/title/icon-48-category.png);}
+.icon-48-category-add				{background-image: url(../images/toolbar/title/icon-48-category-add.png);}
+.icon-48-generic					{background-image: url(../images/toolbar/title/icon-48-generic.png);}
+.icon-48-banners					{background-image: url(../images/toolbar/title/icon-48-banner.png);}
+.icon-48-banners-categories			{background-image: url(../images/toolbar/title/icon-48-banner-categories.png);}
+.icon-48-banners-category-edit		{background-image: url(../images/toolbar/title/icon-48-banner-categories.png);}
+.icon-48-banners-category-add		{background-image: url(../images/toolbar/title/icon-48-category-add.png);}
+.icon-48-banners-clients			{background-image: url(../images/toolbar/title/icon-48-banner-client.png);}
+.icon-48-banners-tracks				{background-image: url(../images/toolbar/title/icon-48-banner-tracks.png);}
+.icon-48-checkin					{background-image: url(../images/toolbar/title/icon-48-checkin.png);}
+.icon-48-clear						{background-image: url(../images/toolbar/title/icon-48-clear.png);}
+.icon-48-contact					{background-image: url(../images/toolbar/title/icon-48-contacts.png);}
+.icon-48-contact-categories			{background-image: url(../images/toolbar/title/icon-48-contacts-categories.png);}
+.icon-48-contact-category-edit		{background-image: url(../images/toolbar/title/icon-48-contacts-categories.png);}
+.icon-48-contact-category-add		{background-image: url(../images/toolbar/title/icon-48-category-add.png);}
+.icon-48-purge						{background-image: url(../images/toolbar/title/icon-48-purge.png);}
+.icon-48-cpanel						{background-image: url(../images/toolbar/title/icon-48-cpanel.png);}
+.icon-48-config						{background-image: url(../images/toolbar/title/icon-48-config.png);}
+.icon-48-groups						{background-image: url(../images/toolbar/title/icon-48-groups.png);}
+.icon-48-groups-add					{background-image: url(../images/toolbar/title/icon-48-groups-add.png);}
+.icon-48-levels						{background-image: url(../images/toolbar/title/icon-48-levels.png);}
+.icon-48-levels-add					{background-image: url(../images/toolbar/title/icon-48-levels-add.png);}
+.icon-48-module						{background-image: url(../images/toolbar/title/icon-48-module.png);}
+.icon-48-menu						{background-image: url(../images/toolbar/title/icon-48-menu.png);}
+.icon-48-menu-add					{background-image: url(../images/toolbar/title/icon-48-menu-add.png);}
+.icon-48-menumgr					{background-image: url(../images/toolbar/title/icon-48-menumgr.png);}
+.icon-48-newsfeeds-categories		{background-image: url(../images/toolbar/title/icon-48-newsfeeds-cat.png);}
+.icon-48-newsfeeds-category-edit	{background-image: url(../images/toolbar/title/icon-48-newsfeeds-cat.png);}
+.icon-48-newsfeeds-category-add		{background-image: url(../images/toolbar/title/icon-48-category-add.png);}
+.icon-48-trash						{background-image: url(../images/toolbar/title/icon-48-trash.png);}
+.icon-48-user						{background-image: url(../images/toolbar/title/icon-48-user.png);}
+.icon-48-user-add					{background-image: url(../images/toolbar/title/icon-48-user-add.png);}
+.icon-48-user-edit					{background-image: url(../images/toolbar/title/icon-48-user-edit.png);}
+.icon-48-user-profile				{background-image: url(../images/toolbar/title/icon-48-user-profile.png);}
+.icon-48-inbox						{background-image: url(../images/toolbar/title/icon-48-inbox.png);}
+.icon-48-new-privatemessage			{background-image: url(../images/toolbar/title/icon-48-new-privatemessage.png);}
+.icon-48-msgconfig					{background-image: url(../images/toolbar/title/icon-48-message_config.png);}
+.icon-48-langmanager				{background-image: url(../images/toolbar/title/icon-48-language.png);}
+.icon-48-mediamanager				{background-image: url(../images/toolbar/title/icon-48-media.png);}
+.icon-48-plugin						{background-image: url(../images/toolbar/title/icon-48-plugin.png);}
+.icon-48-help_header				{background-image: url(../images/toolbar/title/icon-48-help_header.png);}
+.icon-48-impressions				{background-image: url(../images/toolbar/title/icon-48-stats.png);}
+.icon-48-browser					{background-image: url(../images/toolbar/title/icon-48-stats.png);}
+.icon-48-searchtext					{background-image: url(../images/toolbar/title/icon-48-stats.png);}
+.icon-48-thememanager				{background-image: url(../images/toolbar/title/icon-48-themes.png);}
+.icon-48-writemess					{background-image: url(../images/toolbar/title/icon-48-writemess.png);}
+.icon-48-featured					{background-image: url(../images/toolbar/title/icon-48-featured.png);}
+.icon-48-sections					{background-image: url(../images/toolbar/title/icon-48-section.png);}
+.icon-48-article-add				{background-image: url(../images/toolbar/title/icon-48-article-add.png);}
+.icon-48-article-edit				{background-image: url(../images/toolbar/title/icon-48-article-edit.png);}
+.icon-48-article					{background-image: url(../images/toolbar/title/icon-48-article.png);}
+.icon-48-content-categories			{background-image: url(../images/toolbar/title/icon-48-category.png);}
+.icon-48-content-category-edit		{background-image: url(../images/toolbar/title/icon-48-category.png);}
+.icon-48-content-category-add		{background-image: url(../images/toolbar/title/icon-48-category-add.png);}
+.icon-48-install					{background-image: url(../images/toolbar/title/icon-48-extension.png);}
+.icon-48-dbbackup					{background-image: url(../images/toolbar/title/icon-48-backup.png);}
+.icon-48-dbrestore					{background-image: url(../images/toolbar/title/icon-48-dbrestore.png);}
+.icon-48-dbquery					{background-image: url(../images/toolbar/title/icon-48-query.png);}
+.icon-48-systeminfo					{background-image: url(../images/toolbar/title/icon-48-info.png);}
+.icon-48-massmail					{background-image: url(../images/toolbar/title/icon-48-massmail.png);}
+.icon-48-redirect					{background-image: url(../images/toolbar/title/icon-48-redirect.png);}
+.icon-48-search						{background-image: url(../images/toolbar/title/icon-48-search.png);}
+.icon-48-newsfeeds					{background-image: url(../images/toolbar/title/icon-48-newsfeeds.png);}
+.icon-48-newsfeeds-cat				{background-image: url(../images/toolbar/title/icon-48-newsfeeds-cat.png);}
+.icon-48-weblinks					{background-image: url(../images/toolbar/title/icon-48-links.png);}
+.icon-48-weblinks-categories		{background-image: url(../images/toolbar/title/icon-48-links-cat.png);}
+.icon-48-weblinks-category-edit		{background-image: url(../images/toolbar/title/icon-48-links-cat.png);}
+.icon-48-weblinks-category-add		{background-image: url(../images/toolbar/title/icon-48-category-add.png);}
