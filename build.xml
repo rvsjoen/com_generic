@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build Component" default="build" basedir=".">
+	<property name="component_name"		value="com_generic"/>	
+	<property name="src"				value="/var/www/joomla16"/>
+	<property name="dst"				value="/home/enav/Dropbox/gitrepos"/>
+	
+	<target name="build">
+		<echo>**** Building "${component_name}" **** </echo>
+		<echo>**** Erasing old build </echo>
+		<antcall target="erase_old_build"/>
+		<echo>**** Creating emtpy skeleton </echo>
+		<antcall target="create_skeleton"/>
+		<echo>**** Copying files </echo>
+		<antcall target="copy_files"/>
+		<echo>**** Build proccess complete !!! </echo>
+	</target>
+	
+	<target name="erase_old_build">
+		<delete includeemptydirs="true" verbose="false" failonerror="false" >
+			<fileset dir="${dst}/${component_name}/${component_name}" includes="**/*"/>
+		</delete>
+	</target>
+		
+	<target name="create_skeleton">
+		<mkdir dir="${dst}/${component_name}/${component_name}"/>
+		<!-- Admin -->
+		<mkdir dir="${dst}/${component_name}/${component_name}/admin"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/admin/${component_name}"/>
+		<!-- Site -->
+		<mkdir dir="${dst}/${component_name}/${component_name}/site"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/site/${component_name}"/>
+		<!-- Media -->
+		<mkdir dir="${dst}/${component_name}/${component_name}/media"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/media/${component_name}"/>
+		<!-- Langs -->
+		<mkdir dir="${dst}/${component_name}/${component_name}/language"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/language/admin"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/language/site"/>
+	</target>
+
+	<target name="copy_files">
+		<echo>Copying Admin folder... </echo>
+		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/admin/${component_name}"> 
+			<fileset dir="${src}/administrator/components/${component_name}"></fileset>
+		</copy>
+		
+		<echo>Copying Site folder... </echo>
+		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/site/${component_name}"> 
+			<fileset dir="${src}/components/${component_name}"></fileset>
+		</copy>
+			
+		<echo>Copying Admin Langs... </echo>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/administrator/language/en-GB/en-GB.${component_name}.ini" 
+			tofile="${dst}/${component_name}/${component_name}/language/admin/en-GB.${component_name}.ini"/>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/administrator/language/en-GB/en-GB.${component_name}.sys.ini" 
+			tofile="${dst}/${component_name}/${component_name}/language/admin/en-GB.${component_name}.sys.ini"/>
+		
+		<echo>Copying Site Langs... </echo>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/language/en-GB/en-GB.${component_name}.ini" 
+			tofile="${dst}/${component_name}/${component_name}/language/site/en-GB.${component_name}.ini"/>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/language/en-GB/en-GB.${component_name}.sys.ini" 
+			tofile="${dst}/${component_name}/${component_name}/language/site/en-GB.${component_name}.sys.ini"/>		
+
+		<echo>Copying Media folder... </echo>
+		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/media/${component_name}"> 
+			<fileset dir="${src}/media/${component_name}"></fileset>
+		</copy>
+	
+		<echo>Moving installer file... </echo>
+		<move verbose="false" failonerror="false" 
+			file="${dst}/${component_name}/${component_name}/admin/${component_name}/${component_name}.xml" 
+			tofile="${dst}/${component_name}/${component_name}/${component_name}.xml"/>
+	</target>
+	
+</project>	
