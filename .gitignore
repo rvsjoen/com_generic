@@ -1,0 +1,5 @@
+## generic files to ignore
+.project
+.buildpath
+.settings
+.externalToolBuilders
