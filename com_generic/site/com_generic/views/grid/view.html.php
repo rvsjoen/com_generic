@@ -29,7 +29,7 @@ class GenericViewGrid extends JView{
 	 * @return	mixed	False on error, null otherwise.
 	 */
 	function display($tpl = null){
-		$option 	= JRequest::getCmd('option');
+		$comName 	= JRequest::getCmd('option');
 		$document 	= & JFactory::getDocument();
 		$app 		= JFactory::getApplication();
 		$params 	= $app->getParams();
@@ -37,7 +37,7 @@ class GenericViewGrid extends JView{
 		$user = JFactory::getUser();
 		$groups = $user->getAuthorisedViewLevels();
 		//Load resources
-		$document->addStyleSheet("components/$option/assets/media/css/styles.css");
+		$document->addStyleSheet($this->baseurl."/media/$comName/css/styles.css");
 		//Get some data from the models
 		$state		= $this->get('State');
 		$items		= $this->get('Items');
@@ -92,7 +92,7 @@ class GenericViewGrid extends JView{
 	 */
 	function addToolbar(){
 		//Load the toolbar helper and create a toolbar
-		require_once JPATH_COMPONENT.'/assets/helpers/toolbar.php';
+		require_once JPATH_COMPONENT.'/helpers/toolbar.php';
 		$tbar =& new toolbar();
 		//Defines the toolbar icon and title text
 		$tbar->title("Contacts List","contact.png");
@@ -116,7 +116,7 @@ class GenericViewGrid extends JView{
 	 */
 	function addSubmenu(){
 		//Load the submenu helper and create a submenu
-		require_once JPATH_COMPONENT.'/assets/helpers/submenu.php';
+		require_once JPATH_COMPONENT.'/helpers/submenu.php';
 		$smenu =& new submenu();
 		//Add the required elements
 		$smenu->appendElement("Contacts", true, "");

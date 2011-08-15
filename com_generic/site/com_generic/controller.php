@@ -10,7 +10,7 @@
 //No direct access
 defined('_JEXEC') or die;
 jimport('joomla.application.component.controller');
-require_once JPATH_COMPONENT.'/assets/helpers/checkguest.php';
+require_once JPATH_COMPONENT.'/helpers/checkguest.php';
 
 /**
  * Base controller class for Generic
