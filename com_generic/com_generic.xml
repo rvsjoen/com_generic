@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<extension 
-	type="component" 
-	version="1.6.0" 
-	method="upgrade"
-	>
-
+<extension 	type="component" version="1.6.0" method="upgrade">
 	<name>com_generic</name>
 	<creationDate>June 2011</creationDate>
 	<author>FakeAuthor</author>
@@ -16,11 +11,37 @@
 	<version>1.0.0</version>
 	<description>This component is a digital phone book created to show many of the important joomla features to create secure and functional components, part of the code and programming style have been taken from several joomla core components</description>
 
-	<!-- Site Main File Copy Section -->
 	<files folder="site">
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
 		<filename>index.html</filename>
+		<filename>controller.php</filename>
+		<filename>generic.php</filename>
+		<filename>access.xml</filename>
 	</files>
 
-	<administration></administration>
+	<media folder="media">
+		<folder>com_generic</folder>
+	</media>
+
+	<administration>
+		<menu>Generic Example</menu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>elements</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>index.html</filename>
+			<filename>controller.php</filename>
+			<filename>generic.php</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+		</files>
+
+	</administration>
 </extension>
 
