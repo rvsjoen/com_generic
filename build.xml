@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Build Component" default="build" basedir=".">
 	<property name="component_name"		value="com_generic"/>	
-	<property name="src"				value="/var/www/joomla16"/>
+	<property name="src"				value="/var/www/joomla17"/>
 	<property name="dst"				value="/home/enav/Dropbox/gitrepos"/>
 	
 	<target name="build">
@@ -22,56 +22,56 @@
 	</target>
 		
 	<target name="create_skeleton">
+		<!-- Package root -->
 		<mkdir dir="${dst}/${component_name}/${component_name}"/>
 		<!-- Admin -->
 		<mkdir dir="${dst}/${component_name}/${component_name}/admin"/>
-		<!-- Site -->
-		<mkdir dir="${dst}/${component_name}/${component_name}/site"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/admin/language"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/admin/language/en-GB"/>
 		<!-- Media -->
 		<mkdir dir="${dst}/${component_name}/${component_name}/media"/>
 		<mkdir dir="${dst}/${component_name}/${component_name}/media/${component_name}"/>
-		<!-- Langs -->
-		<mkdir dir="${dst}/${component_name}/${component_name}/language"/>
-		<mkdir dir="${dst}/${component_name}/${component_name}/language/admin"/>
-		<mkdir dir="${dst}/${component_name}/${component_name}/language/site"/>
+		<!-- Site -->
+		<mkdir dir="${dst}/${component_name}/${component_name}/site"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/site/language"/>
+		<mkdir dir="${dst}/${component_name}/${component_name}/site/language/en-GB"/>
 	</target>
 
 	<target name="copy_files">
+		<!-- Admin -->
 		<echo>Copying Admin folder... </echo>
 		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/admin/"> 
 			<fileset dir="${src}/administrator/components/${component_name}"></fileset>
 		</copy>
-		
-		<echo>Copying Site folder... </echo>
-		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/site/"> 
-			<fileset dir="${src}/components/${component_name}"></fileset>
-		</copy>
-			
-		<echo>Copying Admin Langs... </echo>
-		<copy verbose="false" failonerror="false" 
-			file="${src}/administrator/language/en-GB/en-GB.${component_name}.ini" 
-			tofile="${dst}/${component_name}/${component_name}/language/admin/en-GB.${component_name}.ini"/>
-		<copy verbose="false" failonerror="false" 
-			file="${src}/administrator/language/en-GB/en-GB.${component_name}.sys.ini" 
-			tofile="${dst}/${component_name}/${component_name}/language/admin/en-GB.${component_name}.sys.ini"/>
-		
-		<echo>Copying Site Langs... </echo>
-		<copy verbose="false" failonerror="false" 
-			file="${src}/language/en-GB/en-GB.${component_name}.ini" 
-			tofile="${dst}/${component_name}/${component_name}/language/site/en-GB.${component_name}.ini"/>
-		<copy verbose="false" failonerror="false" 
-			file="${src}/language/en-GB/en-GB.${component_name}.sys.ini" 
-			tofile="${dst}/${component_name}/${component_name}/language/site/en-GB.${component_name}.sys.ini"/>		
-
+		<!-- Media -->
 		<echo>Copying Media folder... </echo>
 		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/media/${component_name}"> 
 			<fileset dir="${src}/media/${component_name}"></fileset>
 		</copy>
-	
-		<echo>Moving installer file... </echo>
+		<!-- Site -->
+		<echo>Copying Site folder... </echo>
+		<copy verbose="false" failonerror="false" todir="${dst}/${component_name}/${component_name}/site/"> 
+			<fileset dir="${src}/components/${component_name}"></fileset>
+		</copy>
+		<!-- Langs -->	
+		<echo>Copying Admin Langs... </echo>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/administrator/language/en-GB/en-GB.${component_name}.ini" 
+			tofile="${dst}/${component_name}/${component_name}/admin/language/en-GB/en-GB.${component_name}.ini"/>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/administrator/language/en-GB/en-GB.${component_name}.sys.ini" 
+			tofile="${dst}/${component_name}/${component_name}/admin/language/en-GB/en-GB.${component_name}.sys.ini"/>
+		<echo>Copying Site Langs... </echo>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/language/en-GB/en-GB.${component_name}.ini" 
+			tofile="${dst}/${component_name}/${component_name}/site/language/en-GB/en-GB.${component_name}.ini"/>
+		<copy verbose="false" failonerror="false" 
+			file="${src}/language/en-GB/en-GB.${component_name}.sys.ini" 
+			tofile="${dst}/${component_name}/${component_name}/site/language/en-GB/en-GB.${component_name}.sys.ini"/>		
+		<!-- Manifest file -->	
+		<echo>Moving Manifest file... </echo>
 		<move verbose="false" failonerror="false" 
 			file="${dst}/${component_name}/${component_name}/admin/${component_name}.xml" 
 			tofile="${dst}/${component_name}/${component_name}/${component_name}.xml"/>
 	</target>
-	
 </project>	
