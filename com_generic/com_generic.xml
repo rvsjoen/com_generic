@@ -9,10 +9,38 @@
 	<copyright>Copyright (C) 2010-2011 FakeAuthor. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<version>1.0.0</version>
-	<description>This component is a digital phone book created to show many of the important Joomla features to create secure and functional components, part of the code and programming style have been taken from several joomla core components</description>
-
+	<description>COM_CONTACT_XML_DESCRIPTION</description>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+		
 	<administration>
-		<menu>Generic Example</menu>
+		<menu img="class:component">COM_GENERIC</menu>		
+		<submenu>
+			<menu 
+				link="option=com_generic" 
+				img="class:contact" 
+				alt="Generic/Generic">
+				COM_GENERIC_MENU_ELEMENTS
+			</menu>
+			<menu 
+				link="option=com_categories&amp;extension=com_generic" 
+				view="categories" 
+				img="class:contact-cat" 
+				alt="Generic/Categories">
+				COM_GENERIC_MENU_CATEGORIES
+			</menu>
+		</submenu>
+		
 		<files folder="admin">
 			<folder>controllers</folder>
 			<folder>elements</folder>
@@ -20,6 +48,7 @@
 			<folder>models</folder>
 			<folder>sql</folder>
 			<folder>tables</folder>
+			<folder>language</folder>
 			<folder>views</folder>
 			<filename>index.html</filename>
 			<filename>controller.php</filename>
@@ -38,11 +67,11 @@
 		<folder>helpers</folder>
 		<folder>models</folder>
 		<folder>views</folder>
+		<folder>language</folder>
 		<filename>index.html</filename>
 		<filename>controller.php</filename>
 		<filename>generic.php</filename>
 		<filename>access.xml</filename>
-	</files>
-		
+	</files>		
 </extension>
 
